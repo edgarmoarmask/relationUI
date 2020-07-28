@@ -1,0 +1,21 @@
+<section class="filter-container">
+  <div class="filter-chart-container">
+    <ng-container *ngIf="chartSeries">
+      <filter-chart
+        [series]="chartSeries"
+        [showXAxisLabel]="true"
+        [xAxisLabel]="selectedGranularity"
+        (pointClick)="onPointClick($event)">
+        <ng-template #tooltipTemplate let-model="model">
+          <div>{{model.name}}</div>
+          <div>Entities count: {{model.value}}</div>
+        </ng-template>
+      </filter-chart>
+    </ng-container>
+  </div>
+  <div class="filter-toolbar-container">
+    <filter-toolbar
+      (granularityChanged)="onGranularityChanged($event)">
+    </filter-toolbar>
+  </div>
+</section>

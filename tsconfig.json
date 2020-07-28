@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "es2019.array", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@eagleye/client/dashboard": ["libs/client/dashboard/src/index.ts"],
+      "@eagleye/client/interceptors/error": [
+        "libs/client/interceptors/error/src/index.ts"
+      ],
+      "@eagleye/client/environments": ["libs/client/environments/src/index.ts"],
+      "@eagleye/shared/models": ["libs/shared/models/src/index.ts"],
+      "@dashboard/*": ["libs/client/dashboard/src/lib/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

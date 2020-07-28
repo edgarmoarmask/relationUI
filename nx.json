@@ -1,0 +1,45 @@
+{
+  "npmScope": "eagleye",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "dashboard-area-e2e": {
+      "tags": ["scope:client", "scope:client:dashboard"],
+      "implicitDependencies": ["dashboard-area"]
+    },
+    "dashboard-area": {
+      "tags": ["scope:client", "scope:client:dashboard"]
+    },
+    "dashboard": {
+      "tags": []
+    },
+    "interceptors-error": {
+      "tags": ["scope:client", "scope:client:interceptors:error"]
+    },
+    "server": {
+      "tags": ["scope:server"]
+    },
+    "shared-models": {
+      "tags": ["scope:shared", "scope:shared:models"]
+    },
+    "client-environments": {
+      "tags": ["scope:client"]
+    }
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  }
+}

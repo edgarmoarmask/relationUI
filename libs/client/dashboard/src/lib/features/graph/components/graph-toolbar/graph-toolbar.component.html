@@ -1,0 +1,30 @@
+<div class="graph-toolbar">
+  <button mat-icon-button title="Arrange" aria-label="Arrange entities"
+          (click)="arrange.emit()">
+    <mat-icon>device_hub</mat-icon>
+  </button>
+  <button mat-icon-button title="Clear graphic" aria-label="Clear graphic"
+          (click)="clear.emit()">
+    <mat-icon>delete_sweep</mat-icon>
+  </button>
+  <section *ngIf="animationAvailable">
+    <button *ngIf="!isAnimationEnabled" mat-icon-button title="Show connections flow" aria-label="Show connections flow"
+            (click)="startAnimation()">
+      <mat-icon>play_arrow</mat-icon>
+    </button>
+    <button *ngIf="isAnimationEnabled" mat-icon-button title="Hide connections flow" aria-label="Hide connections flow"
+            (click)="stopAnimation()">
+      <mat-icon>stop</mat-icon>
+    </button>
+  </section>
+  <section class="zooming">
+    <button mat-icon-button title="Zoom in" aria-label="Zoom in diagram"
+            (click)="zoomIn.emit()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button title="Zoom out" aria-label="Zoom out diagram"
+            (click)="zoomOut.emit()">
+      <mat-icon>remove</mat-icon>
+    </button>
+  </section>
+</div>

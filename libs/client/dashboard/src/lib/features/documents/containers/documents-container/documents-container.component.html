@@ -1,0 +1,10 @@
+<article class="documents-container">
+  <section *ngIf="entityDocuments$ | async as documents">
+    <mat-list>
+      <document *ngFor="let document of documents"
+                [documentName]="document.name"
+                (openDocument)="openDocument(document)">
+      </document>
+    </mat-list>
+  </section>
+</article>

@@ -1,0 +1,17 @@
+<section class="folders-container" *ngIf="folders$ | async as folders">
+    <mat-list>
+        <div mat-subheader>Folders</div>
+        <mat-list-item *ngFor="let folder of folders" (click)="setWorkFolder(folder)">
+            <mat-icon mat-list-icon>folder</mat-icon>
+            <div mat-line>{{folder.name}}</div>
+        </mat-list-item>
+    </mat-list>
+</section>
+<progress-bar-loader
+  *ngIf="folderContentLoading"
+  title="Fetching folder's content...">
+</progress-bar-loader>
+<ng-container *ngIf="foldersLoading$ | async">
+  <spinner-loader size="60" centered="true"></spinner-loader>
+</ng-container>
+

@@ -1,0 +1,23 @@
+$overlay-zIndex: 9999;
+
+.progress-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $overlay-zIndex;
+  opacity: .7;
+  background-color: black;
+}
+.progress-loader-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $overlay-zIndex + 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

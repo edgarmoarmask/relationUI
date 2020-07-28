@@ -1,0 +1,44 @@
+.chart-container {
+  width: 100%;
+  height: 100%;
+
+  [ngx-tooltip]:focus {
+    outline: none;
+  }
+
+  path.bar.active {
+    fill: #A10A28;
+    stroke: black;
+    stroke-width: 6px;
+    opacity: 1;
+  }
+
+  /*.timeline-filter-bar-chart {
+    .timeline {
+      .brush-background {
+        fill: rgba(0, 0, 0, 0.05);
+      }
+
+      .brush {
+        !*.overlay {
+          fill: #e8c655;
+        }*!
+        .selection {
+          fill: #888888;
+          opacity: .5;
+          stroke-width: 1px;
+          stroke: #888888;
+        }
+
+        .handle {
+          fill-opacity: 0;
+        }
+      }
+
+      .embedded-chart {
+        opacity: 0.6;
+      }
+    }
+  }*/
+
+}

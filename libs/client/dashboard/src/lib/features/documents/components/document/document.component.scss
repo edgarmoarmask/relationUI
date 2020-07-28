@@ -1,0 +1,13 @@
+::ng-deep .document-item .mat-list-item-content {
+  padding: 0 6px !important;
+
+  .mat-list-text {
+    padding-left: 4px !important;
+    width: 245px !important;
+  }
+
+  .open-document {
+    position: absolute;
+    right: 4px !important;
+  }
+}

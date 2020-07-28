@@ -1,0 +1,25 @@
+<article class="entities-list">
+  <search-box label="Find Entities" (onInputChanged)="searchChanged($event)"></search-box>
+  <ng-container *ngIf="entities$ | async as entities">
+    <cdk-virtual-scroll-viewport itemSize="56" class="entities-container" *ngIf="entities.length > 0; else noEntities">
+      <mat-list>
+        <mat-list-item draggable="true" (dragstart)="onEntityDragStart($event, entity)"
+                       *cdkVirtualFor="let entity of entities; trackBy: trackByEntity">
+          <mat-icon *ngIf="entity.image" class="entity-image" mat-list-icon [style.background-image]="'url('+ entity.image +')'"></mat-icon>
+          <mat-icon *ngIf="!entity.image" mat-list-icon>folder</mat-icon>
+          <h4 mat-line>{{entity.name}}</h4>
+        </mat-list-item>
+      </mat-list>
+    </cdk-virtual-scroll-viewport>
+  </ng-container>
+  <ng-template #noEntities>
+    <div class="empty-entities">
+      No corresponding entities
+    </div>
+  </ng-template>
+</article>
+
+
+
+
+

@@ -1,0 +1,36 @@
+.container {
+  height: 190px;
+  position: relative;
+
+  table {
+    background-color: #EEEEEE;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    td, th {
+      border: 1px solid #AAAAAA;
+      padding: 3px 2px;
+    }
+
+    tbody td {
+      font-size: 13px;
+    }
+
+    /*tr:nth-child(even) {
+      background: #C7D6DA;
+    }*/
+
+    thead {
+      background: #75A4A2;
+
+      th {
+        font-size: 16px;
+        font-weight: normal;
+        color: #FFFFFF;
+        text-align: center;
+      }
+    }
+  }
+}
+

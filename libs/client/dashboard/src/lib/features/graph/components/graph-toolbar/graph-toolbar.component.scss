@@ -1,0 +1,10 @@
+.graph-toolbar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .zooming {
+    top: 12vh;
+    position: relative;
+  }
+}

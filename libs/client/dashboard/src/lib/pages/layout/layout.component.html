@@ -1,0 +1,89 @@
+<section class="layout">
+  <mat-toolbar color="primary">
+    <button
+      type="button"
+      aria-label="Toggle sidenav"
+      mat-icon-button
+      (click)="drawer.toggle()">
+      <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+    </button>
+    <span class="spacer folder-name"> {{folderName$ | async}}</span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>{{selectedView === 'graph' ? 'timeline' : 'public'}}</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeCanvasView('graph')" >
+        <mat-icon>timeline</mat-icon>
+        <span>Diagram</span>
+      </button>
+      <button mat-menu-item (click)="changeCanvasView('map')">
+        <mat-icon>public</mat-icon>
+        <span>Map</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" [fixedInViewport]="!(isDesktop$ | async)"
+                 [attr.role]="(isDesktop$ | async) ? 'navigation' : 'dialog'"
+                 [mode]="(isDesktop$ | async) ? 'side' : 'over'"
+                 [opened]="(isDesktop$ | async) === true">
+      <mat-accordion>
+        <mat-expansion-panel [expanded]="true">
+          <mat-expansion-panel-header style="padding: 0 10px;">
+            <mat-panel-title>
+              Entities
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <entities-list></entities-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-divider></mat-divider>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header style="padding: 0 10px;">
+            <mat-panel-title>
+              Entity Properties
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <entity-details></entity-details>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header style="padding: 0 10px;">
+            <mat-panel-title>
+              Documents
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <documents-container></documents-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <mat-accordion *ngIf="!(isDesktop$ | async)">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header style="padding: 0 10px;">
+            <mat-panel-title>
+              Date Filter
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+
+          <ng-container #mobileFilterPane></ng-container>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div [style.height]="(isDesktop$ | async) ? '74%' : '100%'">
+        <ng-container #canvasArea></ng-container>
+      </div>
+      <div *ngIf="(isDesktop$ | async)" style="height: 25%;">
+        <ng-container #desktopFilterPane></ng-container>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</section>

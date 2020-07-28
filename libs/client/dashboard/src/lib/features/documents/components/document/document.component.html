@@ -1,0 +1,8 @@
+<mat-list-item class="document-item" [attr.title]="documentName">
+  <!--<mat-icon mat-list-icon>list_alt</mat-icon>-->
+  <h4 mat-line>{{documentName}}</h4>
+  <button class="open-document" disableRipple="true" mat-icon-button aria-label="Open document's content"
+          (click)="openDocument.emit()">
+    <mat-icon>launch</mat-icon>
+  </button>
+</mat-list-item>

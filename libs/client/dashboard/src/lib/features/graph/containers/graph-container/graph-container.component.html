@@ -1,0 +1,15 @@
+<section class="graph-container"
+         (dragover)="allowEntityDrop($event)"
+         (drop)="onEntityDrop($event)">
+  <div #mxGraph class="graph" (mousewheel)="zoomGraph($event)"></div>
+  <div class="toolbar-container">
+    <graph-toolbar
+      [animationAvailable]="animationAvailable"
+      (arrange)="arrangeEntities()"
+      (animate)="animateEvents($event)"
+      (clear)="clearGraph()"
+      (zoomIn)="zoomInGraph()"
+      (zoomOut)="zoomOutGraph()">
+    </graph-toolbar>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<h2>Documents</h2>
+<cdk-virtual-scroll-viewport itemSize="27" class="container">
+  <table>
+    <thead>
+    <tr>
+      <th *ngFor="let header of headers">{{header}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *cdkVirtualFor="let document of documents">
+      <td>{{document.id}}</td>
+      <td>{{document.name}}</td>
+      <td>{{document.date}}</td>
+    </tr>
+    </tbody>
+  </table>
+</cdk-virtual-scroll-viewport>

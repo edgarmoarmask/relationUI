@@ -1,0 +1,12 @@
+<div class="filter-toolbar">
+  <section class="granularity">
+    <button mat-icon-button aria-label="Increase granularity"
+            [disabled]="increaseDisabled" (click)="increaseGranularity()">
+      <mat-icon>add</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="Decrease granularity"
+            [disabled]="decreaseDisabled" (click)="decreaseGranularity()">
+      <mat-icon>remove</mat-icon>
+    </button>
+  </section>
+</div>

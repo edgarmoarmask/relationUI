@@ -1,0 +1,14 @@
+.folders-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+
+    .mat-list-item:hover {
+        background: #eaebec; 
+        cursor: pointer;
+    }
+
+    .mat-list-icon {
+        color: rgba(0, 0, 0, 0.54);
+    }
+}

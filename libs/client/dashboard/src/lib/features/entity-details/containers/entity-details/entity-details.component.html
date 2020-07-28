@@ -1,0 +1,15 @@
+<article class="entity-details-container">
+  <ng-container *ngIf="detailsGroups$ | async as detailsGroups; else empty">
+    <fieldset class="details-group" *ngFor="let group of detailsGroups">
+      <legend>{{group.name}}</legend>
+      <detail-option *ngFor="let prop of group.items"
+                     [option]="prop"
+                     (propertyChanged)="propertyChanged($event, group.name, prop.value)">
+      </detail-option>
+    </fieldset>
+  </ng-container>
+  <ng-template #empty>
+    No Entities
+  </ng-template>
+</article>
+

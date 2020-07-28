@@ -1,0 +1,7 @@
+<section class="filters-container" *ngIf="dateGroups$ | async as dateGroups">
+  <mat-selection-list (selectionChange)="dateSelectionChanged($event, dateGroups)">
+    <mat-list-option [value]="group.date" *ngFor="let group of dateGroups">
+      {{group.date | date}}
+    </mat-list-option>
+  </mat-selection-list>
+</section>

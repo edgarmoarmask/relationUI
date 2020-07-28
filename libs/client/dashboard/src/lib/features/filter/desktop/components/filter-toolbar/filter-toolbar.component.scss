@@ -1,0 +1,12 @@
+.filter-toolbar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .granularity {
+    right: 19px;
+    position: relative;
+  }
+}
